@@ -50,7 +50,7 @@ jobs:
         run: |
           NEXT_NUM=${{ steps.pre_build.outputs.next_number }}
 
-          ORIGINAL_JAR="jd-cli/target/jd-cli.jar"
+          ORIGINAL_JAR="cli/target/jd-cli.jar"
 
           if [ ! -f "$ORIGINAL_JAR" ]; then
             echo "❌ ERROR: Shaded JAR not found at $ORIGINAL_JAR"
@@ -58,7 +58,7 @@ jobs:
             exit 1
           fi
 
-          JAR_NAME="zdeobf-${NEXT_NUM}.jar"
+          JAR_NAME="cafedec-${NEXT_NUM}.jar"
           cp "$ORIGINAL_JAR" "$JAR_NAME"
 
           echo "JAR_FILE=$JAR_NAME" >> "$GITHUB_ENV"

@@ -33,9 +33,9 @@
             <version>${cfr.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.github.jetBrains</groupId>
-            <artifactId>fernflower</artifactId>
-            <version>${fernflower.version}</version>
+            <groupId>org.vineflower</groupId>
+            <artifactId>vineflower</artifactId>
+            <version>${vineflower.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bitbucket.mstrobel</groupId>
