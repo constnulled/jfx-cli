@@ -1,4 +1,3 @@
-
 package dev.joyel.cafe6.printer;
 
 

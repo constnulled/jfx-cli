@@ -123,27 +123,6 @@
         </repository>
     </repositories>
 
-    <licenses>
-        <license>
-            <name>GNU General Public License, Version 3</name>
-            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
-        </license>
-    </licenses>
-
-     <developers>
-        <developer>
-            <id>kwart</id>
-            <name>Josef Cacek</name>
-            <email>josef@cacek.cz</email>
-        </developer>
-    </developers>
-
-    <scm>
-        <connection>scm:git:https://github.com/intoolswetrust/jd-cli.git</connection>
-        <url>https://github.com/intoolswetrust/jd-cli/</url>
-        <tag>HEAD</tag>
-    </scm>
-
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>

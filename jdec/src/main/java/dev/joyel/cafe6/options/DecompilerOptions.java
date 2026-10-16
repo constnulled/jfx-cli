@@ -2,11 +2,6 @@ package dev.joyel.cafe6.options;
 
 import dev.joyel.cafe6.engine.DecompilerType;
 
-/**
- * Interface representing decompiler options.
- *
- * @author Josef Cacek
- */
 public interface DecompilerOptions {
 
     boolean isSkipResources();
