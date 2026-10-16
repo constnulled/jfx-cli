@@ -110,7 +110,7 @@ The runnable jar with all dependencies is created at `jd-cli/target/jd-cli.jar`.
 
 ```xml
 <dependency>
-    <groupId>com.github.kwart.jd</groupId>
+    <groupId>dev.joyel.0xcafe6</groupId>
     <artifactId>jd-lib</artifactId>
     <version>${jd-cli.version}</version>
 </dependency>
