@@ -22,7 +22,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.nbauma109</groupId>
+            <groupId>io.github.nbauma109</groupId>
             <artifactId>jd-core</artifactId>
             <version>${jd.version}</version>
         </dependency>
