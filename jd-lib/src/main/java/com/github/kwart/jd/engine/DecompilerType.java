@@ -6,7 +6,6 @@ public enum DecompilerType {
 
     JD("jd"),
     CFR("cfr"),
-    VINEFLOWER("vineflower"),
     FERNFLOWER("fernflower"),
     PROCYON("procyon");
 
@@ -24,9 +23,8 @@ public enum DecompilerType {
         switch (this) {
             case CFR:
                 return new CfrEngine();
-            case VINEFLOWER:
             case FERNFLOWER:
-                return new VineflowerEngine();
+                return new FernflowerEngine();
             case PROCYON:
                 return new ProcyonEngine();
             case JD:

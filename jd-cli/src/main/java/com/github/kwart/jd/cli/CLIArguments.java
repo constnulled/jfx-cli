@@ -66,7 +66,7 @@ public class CLIArguments implements DecompilerOptions {
     private final String pattern = null;
 
     @Parameter(names = { "--decompiler", "-dc" },
-            description = "decompiler engine to use. Possible values are: jd, cfr, vineflower, fernflower, procyon",
+            description = "decompiler engine to use. Possible values are: jd, cfr, fernflower, procyon",
             converter = DecompilerTypeConverter.class)
     private DecompilerType decompilerType = DecompilerType.JD;
 

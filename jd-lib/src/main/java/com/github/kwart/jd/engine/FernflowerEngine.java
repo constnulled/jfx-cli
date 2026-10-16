@@ -19,15 +19,15 @@ import org.slf4j.LoggerFactory;
 
 import com.github.kwart.jd.options.DecompilerOptions;
 
-final class VineflowerEngine implements DecompilerEngine {
+final class FernflowerEngine implements DecompilerEngine {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(VineflowerEngine.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FernflowerEngine.class);
 
     @Override
     public String decompile(Loader loader, String internalName, DecompilerOptions options) throws Exception {
         byte[] mainBytes = ClassBytes.require(loader, internalName);
         String className = ClassBytes.thisClassName(mainBytes);
-        Path work = Files.createTempDirectory("jd-cli-vf-");
+        Path work = Files.createTempDirectory("jd-cli-ff-");
         try {
             Path in = Files.createDirectory(work.resolve("in"));
             Path out = Files.createDirectory(work.resolve("out"));
@@ -36,9 +36,9 @@ final class VineflowerEngine implements DecompilerEngine {
                 Files.createDirectories(target.getParent());
                 Files.write(target, entry.getValue());
             }
-            Map<String, Object> vfOptions = new HashMap<>();
-            vfOptions.put("asc", options.isEscapeUnicodeCharacters() ? "1" : "0");
-            Runner runner = new Runner(out.toFile(), vfOptions);
+            Map<String, Object> ffOptions = new HashMap<>();
+            ffOptions.put("asc", options.isEscapeUnicodeCharacters() ? "1" : "0");
+            Runner runner = new Runner(out.toFile(), ffOptions);
             runner.addSource(in.toFile());
             runner.decompileContext();
             return readResult(out, className.substring(className.lastIndexOf('/') + 1) + ".java");

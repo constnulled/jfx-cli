@@ -9,12 +9,11 @@ A command line Java decompiler with a choice of decompiler engines. It decompile
 |----------------------|-------------------------------------------------------------------------------------------------|
 | `jd` (default)       | [JD-Core](https://github.com/nbauma109/jd-core)                                                  |
 | `cfr`                | [CFR](https://github.com/leibnitz27/cfr)                                                         |
-| `vineflower`         | [Vineflower](https://github.com/Vineflower/vineflower)                                           |
-| `fernflower`         | Alias of `vineflower` (both share the same Java package, so only one can be bundled)             |
+| `fernflower`         | [Fernflower](https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler) (JetBrains) |
 | `procyon`            | [Procyon](https://github.com/mstrobel/procyon)                                                   |
 
 JD-Core is the oldest of them and can struggle with newer Java features (records, switch expressions, pattern
-matching, sealed classes). For modern bytecode try `cfr` or `vineflower` first. If one engine produces messy
+matching, sealed classes). For modern bytecode try `cfr` first. If one engine produces messy
 output, run the same input with another one and compare.
 
 ## Download
@@ -37,7 +36,7 @@ java -jar jd-cli.jar [options] [Files to decompile]
 java -jar jd-cli.jar HelloWorld.class
 java -jar jd-cli.jar app.jar
 java -jar jd-cli.jar -dc cfr app.jar
-java -jar jd-cli.jar -dc vineflower -od decompiled -sr app.jar
+java -jar jd-cli.jar -dc fernflower -od decompiled -sr app.jar
 java -jar jd-cli.jar -dc procyon -n classes/
 ```
 
@@ -55,7 +54,7 @@ Output options can be combined, for example `-od out -oc`.
 Usage: java -jar jd-cli.jar [options] [Files to decompile]
   Options:
     --decompiler, -dc
-       decompiler engine to use. Possible values are: jd, cfr, vineflower,
+       decompiler engine to use. Possible values are: jd, cfr,
        fernflower, procyon
        Default: JD
     --displayLineNumbers, -n
@@ -167,5 +166,5 @@ This project was originally forked from [JDCommandLine](https://github.com/bette
 ## License
 
 * jfx-cli is licensed under [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html) as the original JD-Core library.
-* Bundled decompilers keep their own licenses: JD-Core (GPLv3), CFR (MIT), Vineflower (Apache 2.0),
+* Bundled decompilers keep their own licenses: JD-Core (GPLv3), CFR (MIT), Fernflower (Apache 2.0),
   Procyon (Apache 2.0).
