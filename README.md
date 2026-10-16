@@ -108,56 +108,6 @@ The runnable jar with all dependencies is created at `jd-cli/target/jd-cli.jar`.
 
 ## Using as a Maven dependency
 
-```xml
-<dependency>
-    <groupId>dev.joyel.cafe6</groupId>
-    <artifactId>jd-lib</artifactId>
-    <version>${jd-cli.version}</version>
-</dependency>
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-simple</artifactId>
-    <version>${slf4j.version}</version>
-</dependency>
-```
-
-```java
-public static void main(String[] args) {
-    JDInput input = new ZipFileInput("/opt/hazelcast/hazelcast.jar");
-    JDOutput output = new DirOutput(new File("/tmp/hz-src"));
-    JavaDecompiler decompiler = new JavaDecompiler(new DecompilerOptions() {
-
-        @Override
-        public boolean isSkipResources() {
-            return true;
-        }
-
-        @Override
-        public boolean isEscapeUnicodeCharacters() {
-            return false;
-        }
-
-        @Override
-        public boolean isDisplayLineNumbers() {
-            return true;
-        }
-
-        @Override
-        public boolean isParallelProcessingAllowed() {
-            return true;
-        }
-
-        @Override
-        public DecompilerType getDecompilerType() {
-            return DecompilerType.CFR;
-        }
-    });
-    input.decompile(decompiler, output);
-}
-```
-
-`getDecompilerType()` is optional and defaults to `DecompilerType.JD`.
-
 ## Credits
 
 This project was originally forked from [JDCommandLine](https://github.com/betterphp/JDCommandLine) and
