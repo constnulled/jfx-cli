@@ -95,7 +95,7 @@ public final class Main {
         jCmd.parse(args);
         jCmd.setProgramName("java -jar jd-cli.jar");
         jCmd.setUsageHead(getVersionLine() + "\n"
-            + "\nThe jd-cli is a command line interface for Java decompilers (JD-Core, CFR, Fernflower, Procyon; select one with --decompiler). "
+            + "\nThe jd-cli is a command line interface for Java decompilers (JD-Core, CFR, Vineflower, Procyon; select one with --decompiler). "
             + "The application decompile classes, zip archives "
             + "(.zip, .jar, .war, ...) and directories containing classes. "
             + "Each supported input type has configured corresponding "
@@ -219,6 +219,6 @@ public final class Main {
     }
 
     private static String getVersionLine() {
-        return "jd-cli version " + JavaDecompilerConstants.VERSION + " - Copyright (C) 2015-2021 Josef Cacek";
+        return "cli version " + JavaDecompilerConstants.VERSION + " - Copyright (C) 2026 Joyel";
     }
 }

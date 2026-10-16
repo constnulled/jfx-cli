@@ -6,7 +6,7 @@ public enum DecompilerType {
 
     JD("jd"),
     CFR("cfr"),
-    FERNFLOWER("fernflower"),
+    VINEFLOWER("vineflower"),
     PROCYON("procyon");
 
     private final String cliName;
@@ -23,8 +23,8 @@ public enum DecompilerType {
         switch (this) {
             case CFR:
                 return new CfrEngine();
-            case FERNFLOWER:
-                return new FernflowerEngine();
+            case VINEFLOWER:
+                return new VineflowerEngine();
             case PROCYON:
                 return new ProcyonEngine();
             case JD:
@@ -36,6 +36,9 @@ public enum DecompilerType {
     public static DecompilerType fromName(String name) {
         if (name != null) {
             String normalized = name.trim().toLowerCase(Locale.ROOT);
+            if ("fernflower".equals(normalized)) {
+                return VINEFLOWER;
+            }
             for (DecompilerType type : values()) {
                 if (type.cliName.equals(normalized)) {
                     return type;

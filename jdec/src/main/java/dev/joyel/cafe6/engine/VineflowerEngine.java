@@ -19,15 +19,15 @@ import org.slf4j.LoggerFactory;
 
 import dev.joyel.cafe6.options.DecompilerOptions;
 
-final class FernflowerEngine implements DecompilerEngine {
+final class VineflowerEngine implements DecompilerEngine {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(FernflowerEngine.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(VineflowerEngine.class);
 
     @Override
     public String decompile(Loader loader, String internalName, DecompilerOptions options) throws Exception {
         byte[] mainBytes = ClassBytes.require(loader, internalName);
         String className = ClassBytes.thisClassName(mainBytes);
-        Path work = Files.createTempDirectory("jd-cli-ff-");
+        Path work = Files.createTempDirectory("jd-cli-vf-");
         try {
             Path in = Files.createDirectory(work.resolve("in"));
             Path out = Files.createDirectory(work.resolve("out"));
