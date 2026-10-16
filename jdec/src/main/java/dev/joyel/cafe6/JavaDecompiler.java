@@ -1,4 +1,4 @@
-package dev.joyel.cafe6.jd;
+package dev.joyel.cafe6;
 
 import org.jd.core.v1.api.loader.Loader;
 import org.slf4j.Logger;
