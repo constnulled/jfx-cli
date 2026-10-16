@@ -27,8 +27,8 @@
     </properties>
 
     <modules>
-        <module>jd-lib</module>
-        <module>jd-cli</module>
+        <module>jdec</module>
+        <module>cli</module>
     </modules>
 
     <build>
