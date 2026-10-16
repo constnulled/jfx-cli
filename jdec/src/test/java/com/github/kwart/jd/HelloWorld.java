@@ -1,4 +1,4 @@
-package dev.joyel.0xcafe6;
+package dev.joyel.cafe6;
 
 /**
  * Sample test application.

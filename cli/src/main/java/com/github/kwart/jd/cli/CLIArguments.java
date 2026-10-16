@@ -1,4 +1,4 @@
-package dev.joyel.0xcafe6.cli;
+package dev.joyel.cafe6.cli;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,8 +8,8 @@ import ch.qos.logback.classic.Level;
 
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.converters.FileConverter;
-import dev.joyel.0xcafe6.engine.DecompilerType;
-import dev.joyel.0xcafe6.options.DecompilerOptions;
+import dev.joyel.cafe6.engine.DecompilerType;
+import dev.joyel.cafe6.options.DecompilerOptions;
 
 /**
  * Command line arguments for jd-cli.

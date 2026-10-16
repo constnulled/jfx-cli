@@ -14,10 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *******************************************************************************/
-package dev.joyel.0xcafe6.cli;
+package dev.joyel.cafe6.cli;
 
-import dev.joyel.0xcafe6.input.JDInput;
-import dev.joyel.0xcafe6.output.JDOutput;
+import dev.joyel.cafe6.input.JDInput;
+import dev.joyel.cafe6.output.JDOutput;
 
 /**
  * Holds a pair of {@link JDInput} and {@link JDOutput} instances.

@@ -1,8 +1,8 @@
-package dev.joyel.0xcafe6.cli;
+package dev.joyel.cafe6.cli;
 
 import com.beust.jcommander.IStringConverter;
 import com.beust.jcommander.ParameterException;
-import dev.joyel.0xcafe6.engine.DecompilerType;
+import dev.joyel.cafe6.engine.DecompilerType;
 
 public class DecompilerTypeConverter implements IStringConverter<DecompilerType> {
 

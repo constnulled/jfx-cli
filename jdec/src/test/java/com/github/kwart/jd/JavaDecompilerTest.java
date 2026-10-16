@@ -1,4 +1,4 @@
-package dev.joyel.0xcafe6;
+package dev.joyel.cafe6;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertFalse;
@@ -15,13 +15,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import dev.joyel.0xcafe6.input.DirInput;
-import dev.joyel.0xcafe6.input.JDInput;
-import dev.joyel.0xcafe6.options.DecompilerOptions;
-import dev.joyel.0xcafe6.output.DirOutput;
-import dev.joyel.0xcafe6.output.JDOutput;
-import dev.joyel.0xcafe6.output.MultiOutput;
-import dev.joyel.0xcafe6.output.StructuredDirOutput;
+import dev.joyel.cafe6.input.DirInput;
+import dev.joyel.cafe6.input.JDInput;
+import dev.joyel.cafe6.options.DecompilerOptions;
+import dev.joyel.cafe6.output.DirOutput;
+import dev.joyel.cafe6.output.JDOutput;
+import dev.joyel.cafe6.output.MultiOutput;
+import dev.joyel.cafe6.output.StructuredDirOutput;
 
 /**
  * Basic test for {@link JavaDecompiler} class.

@@ -1,4 +1,4 @@
-package dev.joyel.0xcafe6.cli;
+package dev.joyel.cafe6.cli;
 
 import static com.beust.jcommander.JCommander.getConsole;
 import static org.slf4j.Logger.ROOT_LOGGER_NAME;
@@ -14,11 +14,11 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dev.joyel.0xcafe6.IOUtils;
-import dev.joyel.0xcafe6.JavaDecompiler;
-import dev.joyel.0xcafe6.JavaDecompilerConstants;
-import dev.joyel.0xcafe6.input.*;
-import dev.joyel.0xcafe6.output.*;
+import dev.joyel.cafe6.IOUtils;
+import dev.joyel.cafe6.JavaDecompiler;
+import dev.joyel.cafe6.JavaDecompilerConstants;
+import dev.joyel.cafe6.input.*;
+import dev.joyel.cafe6.output.*;
 
 import ch.qos.logback.classic.Level;
 
