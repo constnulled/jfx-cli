@@ -33,7 +33,7 @@
             <version>${cfr.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jetbrains.intellij.deps</groupId>
+            <groupId>com.github.jetBrains</groupId>
             <artifactId>fernflower</artifactId>
             <version>${fernflower.version}</version>
         </dependency>
