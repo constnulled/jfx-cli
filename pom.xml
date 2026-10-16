@@ -27,7 +27,6 @@
     </properties>
 
     <modules>
-        <module>build-tools</module>
         <module>jd-lib</module>
         <module>jd-cli</module>
     </modules>
