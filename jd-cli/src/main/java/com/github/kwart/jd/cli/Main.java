@@ -22,10 +22,6 @@ import com.github.kwart.jd.output.*;
 
 import ch.qos.logback.classic.Level;
 
-/**
- * Main class of jd-cli.
- */
-@SuppressWarnings("checkstyle:ClassDataAbstractionCoupling")
 public final class Main {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);

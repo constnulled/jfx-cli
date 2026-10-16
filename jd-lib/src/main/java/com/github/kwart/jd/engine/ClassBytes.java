@@ -13,7 +13,6 @@ import java.util.regex.Pattern;
 
 import org.jd.core.v1.api.loader.Loader;
 
-@SuppressWarnings("checkstyle:MagicNumber")
 final class ClassBytes {
 
     private static final int CP_UTF8 = 1;

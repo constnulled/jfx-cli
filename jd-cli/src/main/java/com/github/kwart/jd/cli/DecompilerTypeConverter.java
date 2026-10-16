@@ -4,7 +4,6 @@ import com.beust.jcommander.IStringConverter;
 import com.beust.jcommander.ParameterException;
 import com.github.kwart.jd.engine.DecompilerType;
 
-@SuppressWarnings("checkstyle:JavadocType")
 public class DecompilerTypeConverter implements IStringConverter<DecompilerType> {
 
     @Override

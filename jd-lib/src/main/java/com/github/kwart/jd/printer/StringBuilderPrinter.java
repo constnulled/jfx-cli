@@ -16,7 +16,7 @@ import com.github.kwart.jd.options.DecompilerOptions;
 /**
  * Printer implementation which writes the data to a StringBuilder instance.
  */
-@SuppressWarnings("checkstyle:MagicNumber")
+ 
 public class StringBuilderPrinter implements Printer {
 
     protected static final String INDENTATION = "  ";

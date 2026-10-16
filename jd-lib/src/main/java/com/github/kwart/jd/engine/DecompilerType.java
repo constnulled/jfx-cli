@@ -2,7 +2,6 @@ package com.github.kwart.jd.engine;
 
 import java.util.Locale;
 
-@SuppressWarnings({ "checkstyle:JavadocType", "checkstyle:JavadocVariable" })
 public enum DecompilerType {
 
     JD("jd"),
