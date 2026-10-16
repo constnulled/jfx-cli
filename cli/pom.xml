@@ -15,7 +15,7 @@
     <description>Command line interface module</description>
 
     <build>
-        <finalName>jd-cli</finalName>.
+        <finalName>jd-cli</finalName>
 
         <plugins>
             <plugin>
