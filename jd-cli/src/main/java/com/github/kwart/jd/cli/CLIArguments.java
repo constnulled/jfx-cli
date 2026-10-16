@@ -1,19 +1,3 @@
-/*******************************************************************************
- * Copyright (C) 2015 Josef Cacek
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *******************************************************************************/
 package com.github.kwart.jd.cli;
 
 import java.io.File;
@@ -24,6 +8,7 @@ import ch.qos.logback.classic.Level;
 
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.converters.FileConverter;
+import com.github.kwart.jd.engine.DecompilerType;
 import com.github.kwart.jd.options.DecompilerOptions;
 
 /**
@@ -80,6 +65,11 @@ public class CLIArguments implements DecompilerOptions {
             "RegExp pattern which the to-be-decompiled file has to match. Not matching entries are skipped.")
     private final String pattern = null;
 
+    @Parameter(names = { "--decompiler", "-dc" },
+            description = "decompiler engine to use. Possible values are: jd, cfr, vineflower, fernflower, procyon",
+            converter = DecompilerTypeConverter.class)
+    private DecompilerType decompilerType = DecompilerType.JD;
+
     public List<String> getFiles() {
         return files;
     }
@@ -126,6 +116,11 @@ public class CLIArguments implements DecompilerOptions {
 
     public String getPattern() {
         return pattern;
+    }
+
+    @Override
+    public DecompilerType getDecompilerType() {
+        return decompilerType;
     }
 
     public boolean isOutputPluginSpecified() {

@@ -1,19 +1,3 @@
-/*******************************************************************************
- * Copyright (C) 2015 Josef Cacek
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *******************************************************************************/
 package com.github.kwart.jd.cli;
 
 import static com.beust.jcommander.JCommander.getConsole;
@@ -33,17 +17,8 @@ import org.slf4j.LoggerFactory;
 import com.github.kwart.jd.IOUtils;
 import com.github.kwart.jd.JavaDecompiler;
 import com.github.kwart.jd.JavaDecompilerConstants;
-import com.github.kwart.jd.input.CachedDirInput;
-import com.github.kwart.jd.input.ClassFileInput;
-import com.github.kwart.jd.input.DirInput;
-import com.github.kwart.jd.input.JDInput;
-import com.github.kwart.jd.input.ZipFileInput;
-import com.github.kwart.jd.output.DirOutput;
-import com.github.kwart.jd.output.JDOutput;
-import com.github.kwart.jd.output.MultiOutput;
-import com.github.kwart.jd.output.PrintStreamOutput;
-import com.github.kwart.jd.output.StructuredDirOutput;
-import com.github.kwart.jd.output.ZipOutput;
+import com.github.kwart.jd.input.*;
+import com.github.kwart.jd.output.*;
 
 import ch.qos.logback.classic.Level;
 
@@ -58,14 +33,6 @@ public final class Main {
     private Main() {
     }
 
-    /**
-     * The {@link #main(String[])}!
-     *
-     * @param args
-     */
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         final CLIArguments cliArguments = new CLIArguments();
         final ExtCommander jCmd = initCommander(args, cliArguments);
@@ -132,7 +99,7 @@ public final class Main {
         jCmd.parse(args);
         jCmd.setProgramName("java -jar jd-cli.jar");
         jCmd.setUsageHead(getVersionLine() + "\n"
-            + "\nThe jd-cli is a command line interface for the Java Decompiler (http://jd.benow.ca/). "
+            + "\nThe jd-cli is a command line interface for Java decompilers (JD-Core, CFR, Vineflower, Fernflower, Procyon; select one with --decompiler). "
             + "The application decompile classes, zip archives "
             + "(.zip, .jar, .war, ...) and directories containing classes. "
             + "Each supported input type has configured corresponding "
@@ -194,17 +161,6 @@ public final class Main {
         return outputPlugin;
     }
 
-    /**
-     * Helper method which creates correct {@link JDInput} instance for the input file and if outPlugin is null, then provides a
-     * default {@link JDOutput} instance for the given input file type too.
-     *
-     * @param inputFile
-     * @param outPlugin
-     * @param useParallel
-     * @return
-     * @throws NullPointerException
-     * @throws IOException
-     */
     public static InputOutputPair getInOutPlugins(final File inputFile, JDOutput outPlugin, String pattern, boolean useParallel)
             throws NullPointerException, IOException {
         JDInput jdIn = null;
@@ -244,20 +200,10 @@ public final class Main {
         return new InputOutputPair(jdIn, outPlugin, jdOut);
     }
 
-    /**
-     * Configures Logback log level.
-     *
-     * @param level
-     */
     private static void setLoggingLevel(final Level level) {
         ((ch.qos.logback.classic.Logger) org.slf4j.LoggerFactory.getLogger(ROOT_LOGGER_NAME)).setLevel(level);
     }
 
-    /**
-     * Creates a temporary file from STD_IN input.
-     *
-     * @return newly created file with content received from {@link System#in} occurs)
-     */
     private static File readSystemIn() {
         FileOutputStream os = null;
         File tempFile = null;

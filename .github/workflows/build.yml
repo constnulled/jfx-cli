@@ -3,7 +3,7 @@ name: build
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 permissions:
   contents: write
@@ -50,11 +50,11 @@ jobs:
         run: |
           NEXT_NUM=${{ steps.pre_build.outputs.next_number }}
 
-          ORIGINAL_JAR="target/*.jar"
+          ORIGINAL_JAR="jd-cli/target/jd-cli.jar"
 
           if [ ! -f "$ORIGINAL_JAR" ]; then
             echo "❌ ERROR: Shaded JAR not found at $ORIGINAL_JAR"
-            ls -la target/
+            find . -name "*.jar" -path "*/target/*"
             exit 1
           fi
 
@@ -79,10 +79,10 @@ jobs:
 
             git log --pretty=format:"- %s ([%h](${REPO_URL}/commit/%H))" >> CHANGELOG.md
           else
-            echo "_Changes since $LAST_TAG_" >> CHANGELOG.md
+            echo "_Changes since ${LAST_TAG}_" >> CHANGELOG.md
             echo "" >> CHANGELOG.md
 
-            git log "$LAST_TAG..HEAD" \
+            git log "${LAST_TAG}..HEAD" \
               --pretty=format:"- %s ([%h](${REPO_URL}/commit/%H))" >> CHANGELOG.md
           fi
 
@@ -96,7 +96,7 @@ jobs:
         with:
           files: ${{ env.JAR_FILE }}
           tag_name: v${{ steps.package.outputs.next_number }}
-          name: ZDeobf Build ${{ steps.package.outputs.next_number }}
+          name: jfx Build ${{ steps.package.outputs.next_number }}
           body_path: CHANGELOG.md
           overwrite_files: true
         env:
